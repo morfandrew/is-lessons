@@ -38,3 +38,30 @@ const filterClickHandler = function (e) {
     }
 };
 $searchButton.addEventListener('click', filterClickHandler);
+
+
+//дз по сортировке
+
+const $sortButtonIncr = document.querySelector('.increase');
+
+function sortListIncr() {
+    $tbody.innerHTML = '';
+    for (let j = list.length -1; j>0 ; j--) {
+        for (let i = 0; i < j; i++) {
+            if (list[id] > list[id+1]) {
+                let temp = list[id];
+                list[id] = list[id+1];
+                list[id+1] = temp;
+            }
+            
+        }
+            const element = sortIncr[index];
+            const $tr = document.createElement('tr');
+            const $tdId = document.createElement('td');
+            const $tdNumber = document.createElement('td');
+            $tdId.innerHTML = element.id;
+            $tdNumber.innerHTML = element.name;
+            $tr.append($tdId, $tdNumber);
+            $tbody.appendChild($tr);
+    }
+ }
